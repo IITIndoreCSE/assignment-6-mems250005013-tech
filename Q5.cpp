@@ -1,7 +1,7 @@
 // Write a program to populate a character array with letters of the alphabet at random; subsequently the letters in the array should be arranged alphabetically (without using the sort function).
 #include <iostream>
 #include <vector>
-#include <algorithm> // for sort()
+#include <algorithm> 
 using namespace std;
 
 int main() {
@@ -15,14 +15,13 @@ int main() {
         cin >> letters[i];
     }
 
-    // Sort using ASCII values
     sort(letters.begin(), letters.end());
 
-    // Print result with single quotes, commas, and curly brackets
+    
     cout << "{";
     for (int i = 0; i < n; i++) {
         cout << "'" << letters[i] << "'";
-        if (i < n - 1) cout << ", "; // add comma except for last element
+        if (i < n - 1) cout << ", "; 
     }
     cout << "}" << endl;
 
