@@ -10,7 +10,7 @@ int main() {
 
     if (n < 1) {
         cout << "Please enter a positive integer greater than 0." << endl;
-        return 1;
+        return 0;
     }
 
     int sum = 0;
