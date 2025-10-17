@@ -5,7 +5,7 @@ using namespace std;
 
 int main() {
     int n;
-    cout << "Enter a positive integer: ";
+    cout << "Enter a positive integer: "<<endl;
     cin >> n;
 
     if (n < 1) {
