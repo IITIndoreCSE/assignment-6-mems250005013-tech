@@ -1,63 +1,42 @@
 //  Write a program in C++ with a function called add to add two complex numbers and another function called subtract to subtract one complex number from another. 
-#include <iostream>
+ #include <iostream>
 using namespace std;
 
-struct Complex {
-
-    float real;
-    float imag;
-
-    
-    Complex(float r = 0, float i = 0) : real(r), imag(i) {}
-};
-
-
-Complex add(const Complex& c1, const Complex& c2) {
-    Complex result;
-    result.real = c1.real + c2.real;
-    result.imag = c1.imag + c2.imag;
-    return result;
-}
-
-
-Complex subtract(const Complex& c1, const Complex& c2) {
-    Complex result;
-    result.real = c1.real - c2.real;
-    result.imag = c1.imag - c2.imag;
-    return result;
-}
-
-
-void display(const Complex& c) {
-    if (c.imag >= 0)
-        cout << c.real << " + " << c.imag << "i" << endl;
+// add Function to add two complex numbers
+void add(float r1, float i1, float r2, float i2) {
+    float realPart = r1 + r2;
+    float imagPart = i1 + i2;
+    if (imagPart >= 0)
+        cout << "Sum :" << realPart << " + " << imagPart << "i\n";
     else
-        cout << c.real << " - " << -c.imag << "i" << endl;
+        cout << "Sum :" << realPart << " - " << -imagPart << "i\n";
+}
+
+// subtract Function to subtract one complex number from another
+void subtract(float r1, float i1, float r2, float i2) {
+    float realPart = r1 - r2;
+    float imagPart = i1 - i2;
+   if (imagPart >= 0)
+        cout << "Difference :" << realPart << " + " << imagPart << "i\n";
+    else
+        cout << "Difference :" << realPart << " - " << -imagPart << "i\n";
 }
 
 int main() {
-  double x,y;
-  double a,b;
-  cin>>x>>y;
-  cin>>a>>b;
-    Complex num1(x, y);  
-    Complex num2(a, b);  
+    float r1, i1, r2, i2;
 
-    cout << "Complex number 1: ";
-    display(num1);
-    cout << "Complex number 2: ";
-    display(num2);
+    cout << "Complex number 1:\n";
+    cin >> r1 >> i1;
 
-    Complex sum = add(num1, num2);
-    Complex diff = subtract(num1, num2);
+    cout << "Complex number 2:\n";
+    cin >> r2 >> i2;
 
-    cout << "Sum of complex numbers: ";
-    display(sum);
-    cout << "Difference of complex numbers: ";
-    display(diff);
+    add(r1, i1, r2, i2);
+    subtract(r1, i1, r2, i2);
 
     return 0;
 }
+
 
 
 
